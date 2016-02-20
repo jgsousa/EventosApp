@@ -1,9 +1,9 @@
 var db = require('mongoose');
 
 var EventoSchema = new db.Schema({
-    name: String,
-    startDate: Date,
-    endDate: Date,
+    nome: String,
+    dataInicio: Date,
+    dataFim: Date,
     descricao: String,
     sessoes: Array
 });

@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                     compress:true
                 },
                 files: [{
-                    'assets/bin/tarefas.min.js': [
+                    'assets/bin/eventos.min.js': [
                         'assets/controllers/mainApp.js',
                         'assets/controllers/*.js',
                         'assets/services/*.js',

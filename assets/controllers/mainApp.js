@@ -25,77 +25,61 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'pages/user/criaruser.html',
             controller: 'criarUserController'
         })
-
-        // route for the about page
-        .when('/tarefas', {
-            templateUrl: 'pages/tarefas/tarefas.html',
-            controller: 'tarefasController'
+        .when('/eventos', {
+            templateUrl: 'pages/eventos/eventos.html',
+            controller: 'eventosController'
         })
 
-        // route for the contact page
-        .when('/recursos', {
-            templateUrl: 'pages/recursos/recursos.html',
-            controller: 'recursosController'
+        .when('/eventos/:id', {
+            templateUrl: 'pages/eventos/eventosdetail.html',
+            controller: 'eventosDetailController'
         })
 
-        .when('/criarrecursos', {
-            templateUrl: 'pages/recursos/criarrecurso.html',
-            controller: 'criarRecursosController'
+        .when('/criarevento', {
+            templateUrl: 'pages/eventos/eventosdetail.html',
+            controller: 'criarEventosController'
+        })
+        .when('/sessoes', {
+            templateUrl: 'pages/sessoes/sessoes.html',
+            controller: 'sessoesController'
         })
 
-        .when('/recursos/:id', {
-            templateUrl: 'pages/recursos/recursosdetail.html',
-            controller: 'recursosDetailController'
+        .when('/sessoes/:id', {
+            templateUrl: 'pages/sessoes/sessoesdetail.html',
+            controller: 'sessoesDetailController'
         })
 
-        .when('/recursos/:id/tarefa/:tarefa', {
-            templateUrl: 'pages/tarefas/tarefasdetail.html',
-            controller: 'tarefasDetailController'
+        .when('/criarsessao', {
+            templateUrl: 'pages/sessoes/sessoesdetail.html',
+            controller: 'criarSessoesController'
+        })
+        .when('/speakers', {
+            templateUrl: 'pages/speakers/speakers.html',
+            controller: 'speakersController'
         })
 
-        .when('/recursos/:id/novatarefa', {
-            templateUrl: 'pages/tarefas/tarefasdetail.html',
-            controller: 'tarefasDetailController'
+        .when('/speakers/:id', {
+            templateUrl: 'pages/speakers/speakersdetail.html',
+            controller: 'speakersDetailController'
         })
 
-        .when('/projectos', {
-            templateUrl: 'pages/projectos/projectos.html',
-            controller: 'projectosController'
+        .when('/criarspeaker', {
+            templateUrl: 'pages/speakers/speakersdetail.html',
+            controller: 'criarSpeakersController'
+        })
+        .when('/participantes', {
+            templateUrl: 'pages/participantes/participantes.html',
+            controller: 'participantesController'
         })
 
-        .when('/criarprojecto', {
-            templateUrl: 'pages/projectos/projectodetail.html',
-            controller: 'projectosDetailController'
+        .when('/participantes/:id', {
+            templateUrl: 'pages/participantes/participantesdetail.html',
+            controller: 'participantesDetailController'
         })
 
-        .when('/projectos/:id', {
-            templateUrl: 'pages/projectos/projectodetail.html',
-            controller: 'projectosDetailController'
-        })
-
-        .when('/backlog', {
-            templateUrl: 'pages/backlog/backlog.html',
-            controller: 'backlogController'
-        })
-
-        .when('/oportunidades', {
-            templateUrl: 'pages/oportunidades/oportunidades.html',
-            controller: 'oportunidadeController'
-        })
-
-        .when('/criaroportunidade', {
-            templateUrl: 'pages/oportunidades/oportunidadedetail.html',
-            controller: 'oportunidadeDetailController'
-        })
-
-        .when('/oportunidades/:id', {
-            templateUrl: 'pages/oportunidades/oportunidadedetail.html',
-            controller: 'oportunidadeDetailController'
-        })
-
-        .when('/budget', {
-            templateUrl: 'pages/budget/budget.html',
-            controller: 'budgetController'
+        .when('/criarparticipante', {
+            templateUrl: 'pages/participantes/participantesdetail.html',
+            controller: 'criarParticipantesController'
         })
         .when('/login', {
             templateUrl: 'pages/users/login.html'

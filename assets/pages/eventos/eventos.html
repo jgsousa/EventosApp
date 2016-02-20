@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <h3 class="col-md-4">Lista de eventos</h3>
+
+        <form class="form-inline ">
+            <div class="form-group col-md-6 col-md-offset-2">
+                <input placeholder="Filtro"
+                       class="form-control col-md-1 col-md-offset-4 input-deloitte" ng-model="filtro.name">
+                <a href="#/criarevento" class="btn btn-deloitte col-md-3" role="button">Criar evento</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabela">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Evento</th>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="evento in eventos |filter:filtro">
+                <td><a href="#/eventos/{{evento._id}}">{{evento._id}}</a></td>
+                <td>{{evento.nome}}</td>
+                <td>
+                    <button type="button" class="btn btn-default" ng-click="requestDeleteSelected(user)">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
