@@ -41,7 +41,7 @@ mainApp.controller("criarParticipantesController", ['$scope', '$location','Parti
                 }, function (err) {
                 });
             } else {
-
+                ngToast.create('Erro');
             }
         };
 

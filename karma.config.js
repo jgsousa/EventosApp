@@ -30,7 +30,7 @@ module.exports = function (config) {
             './node_modules/angular-mocks/angular-mocks.js',
             './assets/libs/spin.min.js',
             './bower_components/angular-spinner-fixed/angular-spinner.min.js',
-            './assets/bin/tarefas.min.js',
+            './assets/bin/eventos.min.js',
             './assets/tests/**/*.js'
 
         ],

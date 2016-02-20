@@ -1,8 +1,8 @@
 .navbar-inverse {
   color: white;
   border-radius: 0;
-  background-color: #1b3277;
-  border-color: #1b3277;
+  background-color: #1B3277;
+  border-color: #1B3277;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: white;
@@ -22,28 +22,28 @@
   overflow-y: auto;
 }
 thead {
-  background-color: #1b3277;
+  background-color: #1B3277;
   color: white;
 }
 .btn-deloitte {
-  background-color: #9acd66;
+  background-color: #9ACD66;
   color: white;
   margin-top: 20px;
   margin-left: 5px;
 }
 .btn-deloittelight {
-  background-color: #00a1de;
+  background-color: #00A1DE;
   color: white;
   margin-top: 20px;
   margin-left: 5px;
 }
 .btn-deloitte:hover {
-  background-color: #3c8a2e;
+  background-color: #3C8A2E;
   color: white;
 }
 .btn-deloitte:active,
 .btn-deloitte:focus {
-  background-color: #9acd66;
+  background-color: #9ACD66;
   color: white;
 }
 .btn-deloittelight:hover {
@@ -71,17 +71,17 @@ thead {
   border-color: white;
 }
 .panel-primary > .panel-heading {
-  background-color: #1b3277;
+  background-color: #1B3277;
   margin-bottom: 15px;
 }
 .backlog-grid {
   margin: 20px;
 }
 .ag-pinned-header {
-  background-color: #1b3277;
+  background-color: #1B3277;
 }
 .ag-fresh .ag-header-container {
-  background: linear-gradient(#1b3277, #1b3277);
+  background: linear-gradient(#1B3277, #1B3277);
   color: white;
 }
 .ag-fresh .ag-header-icon {
@@ -103,11 +103,11 @@ thead {
 }
 .blue {
   color: white;
-  background-color: #1b3277 !important;
+  background-color: #1B3277 !important;
   text-align: center;
 }
 .green {
-  background-color: #9acd66 !important;
+  background-color: #9ACD66 !important;
 }
 .red {
   background-color: orangered !important;

@@ -41,7 +41,7 @@ mainApp.controller("criarSpeakersController", ['$scope', '$location','SpeakerSer
                 }, function (err) {
                 });
             } else {
-
+                ngToast.create('Erro');
             }
         };
 

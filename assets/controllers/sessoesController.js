@@ -41,7 +41,7 @@ mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServi
                 }, function (err) {
                 });
             } else {
-
+                ngToast.create('Erro');
             }
         };
 

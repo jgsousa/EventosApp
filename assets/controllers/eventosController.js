@@ -42,7 +42,7 @@ mainApp.controller("criarEventosController", ['$scope', '$location', 'EventoServ
                 }, function (err) {
                 });
             } else {
-
+                ngToast.create('Erro');
             }
         };
 
