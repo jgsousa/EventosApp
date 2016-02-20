@@ -2,15 +2,14 @@ module.exports = function (passport) {
 
     var express = require('express');
     var router = express.Router();
-    var debug = require('debug')('TarefasApp:server');
+    var debug = require('debug')('EventosApp:server');
 
     var links = [
         { link: "users", label:"Users"},
-        { link: "recursos", label:"Recursos"},
-        { link: "projectos", label:"Projectos"},
-        { link: "backlog", label:"Backlog"},
-        { link: "budget", label:"Budget"},
-        { link: "oportunidades", label:"Oportunidades"}
+        { link: "eventos", label:"Eventos"},
+        { link: "participantes", label:"Participantes"},
+        { link: "sessoes", label:"Sessoes"},
+        { link: "speakers", label:"Speakers"}
         //===== yeoman routejs hook =====//
     ];
 

@@ -8,16 +8,16 @@ var bodyParser = require('body-parser');
 var db = require('./dbutils');
 var compress = require('compression');
 var serveStatic = require('serve-static');
-var debug = require('debug')('TarefasApp:server');
+var debug = require('debug')('EventosApp:server');
 
 var expressSession = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users.route');
-var recursos = require('./routes/recursos.route');
-var projectos = require('./routes/projecto.route');
-var budgets = require('./routes/budget.route');
-var oportunidades = require('./routes/oportunidade.route');
+var participantes = require('./routes/participante.route');
+var sessoes = require('./routes/sessao.route');
+var eventos = require('./routes/evento.route');
+var speakers = require('./routes/speaker.route');
 
 var app = express();
 
@@ -94,10 +94,10 @@ app.use(passport.session());
 
 app.use('/', exposeDb, routes(passport));
 app.use('/users', exposeDb, users(passport));
-app.use('/recursos', exposeDb, recursos(passport));
-app.use('/projectos', exposeDb, projectos(passport));
-app.use('/budget', exposeDb, budgets(passport));
-app.use('/oportunidades', exposeDb, oportunidades(passport));
+app.use('/sessoes', exposeDb, sessoes(passport));
+app.use('/participantes', exposeDb, participantes(passport));
+app.use('/speakers', exposeDb, speakers(passport));
+app.use('/eventos', exposeDb, eventos(passport));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

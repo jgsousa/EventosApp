@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var debug = require('debug')('TarefasApp:server');
+var debug = require('debug')('EventosApp:server');
 mongoose.connection.on('open', function (ref) {
     debug('Connected to mongoDB server.');
     debug('It has the following collections:');
@@ -9,7 +9,7 @@ mongoose.connection.on('open', function (ref) {
     });
 });
 if(process.env.LOCAL === 'yes'){
-    mongoose.connect('mongodb://localhost/tarefas');
+    mongoose.connect('mongodb://localhost/eventos');
 } else {
     mongoose.connect(process.env.MONGOLAB_URI);
 }
