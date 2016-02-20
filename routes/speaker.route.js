@@ -3,6 +3,15 @@ module.exports = function (passport) {
     var router = express.Router();
     var speaker = require('../models/speaker.server.model.js');
 
+    var isAuthenticated = function (req, res, next) {
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate', 'Basic realm="Tarefas Server"');
+        res.end('Unauthorized');
+    };
+
     router.get('/', function (req, res, next) {
         speaker.getAllSpeakers(function (err, docs) {
             res.json(docs);
@@ -10,7 +19,7 @@ module.exports = function (passport) {
 
     });
 
-    router.post('/create', function (req, res, next) {
+    router.post('/create', isAuthenticated, function (req, res, next) {
         speaker.createSpeaker(req.body, function (err, docs) {
             res.send("ok");
         });
@@ -23,14 +32,14 @@ module.exports = function (passport) {
         });
     });
 
-    router.put('/:id', function (req, res, next) {
+    router.put('/:id', isAuthenticated, function (req, res, next) {
         var obj = req.body;
         speaker.updateSpeaker(obj, function (err, docs) {
             res.send("ok");
         });
     });
 
-    router.delete('/:id', function (req, res, next) {
+    router.delete('/:id', isAuthenticated, function (req, res, next) {
         var id = req.params.id;
         speaker.deleteForId(id, function (err, docs) {
             res.send("ok");

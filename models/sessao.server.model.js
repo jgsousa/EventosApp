@@ -33,4 +33,9 @@ SessaoSchema.statics.deleteForId = function (id, callback) {
 
 };
 
+SessaoSchema.statics.getSessoesForEventoId = function (id, callback) {
+    this.find({ eventoId:id }, {}, callback);
+
+};
+
 module.exports = db.model('sessao', SessaoSchema);
