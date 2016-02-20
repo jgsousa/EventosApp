@@ -16,14 +16,16 @@
             <thead>
             <tr>
                 <th>Evento</th>
-                <th>Nome</th>
+                <th>Data de Início</th>
+                <th>Data de Fim</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="evento in eventos |filter:filtro">
-                <td><a href="#/eventos/{{evento._id}}">{{evento._id}}</a></td>
-                <td>{{evento.nome}}</td>
+                <td><a href="#/eventos/{{evento._id}}">{{evento.nome}}</a></td>
+                <td>{{evento.dataInicio | date:'dd/MM/yyyy'}}</td>
+                <td>{{evento.dataFim | date:'dd/MM/yyyy'}}</td>
                 <td>
                     <button type="button" class="btn btn-default" ng-click="requestDeleteSelected(user)">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>

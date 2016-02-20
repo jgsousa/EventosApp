@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             <tr ng-repeat="sessao in sessoes |filter:filtro">
-                <td><a href="#/participantes/{{sessao._id}}">{{sessao.nome}}</a></td>
+                <td><a href="#/sessoes/{{sessao._id}}">{{sessao.nome}}</a></td>
                 <td>{{sessao.nome}}</td>
                 <td>
                     <button type="button" class="btn btn-default" ng-click="requestDeleteSelected(user)">

@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             <tr ng-repeat="speaker in speakers |filter:filtro">
-                <td><a href="#/participantes/{{speaker._id}}">{{speaker.nome}}</a></td>
+                <td><a href="#/speakers/{{speaker._id}}">{{speaker.nome}}</a></td>
                 <td>{{speaker.nome}}</td>
                 <td>
                     <button type="button" class="btn btn-default" ng-click="requestDeleteSelected(user)">

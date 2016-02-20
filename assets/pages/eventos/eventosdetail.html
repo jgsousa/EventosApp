@@ -11,6 +11,30 @@
                        id="inputNome" placeholder="Nome" ng-model="data.nome" ng-required="true">
             </div>
         </div>
+        <div class="form-group">
+            <label for="inputDataIni" class="col-sm-2 control-label">Data início</label>
+
+            <div class="col-sm-3">
+                <input type="date" class="form-control"
+                       id="inputDataIni" placeholder="Data" ng-model="data.dataInicio" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputDataFim" class="col-sm-2 control-label">Data fim</label>
+
+            <div class="col-sm-3">
+                <input type="date" class="form-control"
+                       id="inputDataFim" placeholder="Data" ng-model="data.dataFim" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTexto" class="col-sm-2 control-label">Detalhe</label>
+
+            <div class="col-sm-10">
+                <textarea id="inputTexto" class="form-control" rows="5" ng-model="data.descricao"
+                          placeholder="Insira detalhe sobre a tarefa" required></textarea>
+            </div>
+        </div>
         <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>
     </form>
 

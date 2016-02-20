@@ -14,6 +14,8 @@ mainApp.controller("eventosDetailController", ['$scope', '$routeParams', '$locat
         EventoServices.getEventoForId($routeParams.id).then(function (data) {
             if (data) {
                 $scope.data = data;
+                $scope.data.dataInicio = new Date($scope.data.dataInicio);
+                $scope.data.dataFim = new Date($scope.data.dataFim);
             } else {
                 $location.path('/eventos/');
             }

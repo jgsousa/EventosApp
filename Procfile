@@ -1,1 +1,1 @@
-web: node ./bin/www
+web: ./node_modules/grunt/.bin/grunt ; node ./bin/www
