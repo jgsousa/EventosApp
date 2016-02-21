@@ -5,8 +5,8 @@ var ParticipanteSchema = new db.Schema({
     nome: String,
     empresa: String,
     headline: String,
-    perfilLinkedId: String,
-    memberId:String,
+    perfilLinkedIn: String,
+    memberId:{ type:String, unique:true},
     pictureUrl:String,
     sessoes: Array
 });
