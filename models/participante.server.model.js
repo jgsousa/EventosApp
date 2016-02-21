@@ -4,6 +4,10 @@ var ParticipanteSchema = new db.Schema({
     eventoId: String,
     nome: String,
     empresa: String,
+    headline: String,
+    perfilLinkedId: String,
+    memberId:String,
+    pictureUrl:String,
     sessoes: Array
 });
 

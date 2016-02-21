@@ -8,7 +8,7 @@ module.exports = function (passport) {
             return next();
         }
         res.statusCode = 401;
-        res.setHeader('WWW-Authenticate', 'Basic realm="Tarefas Server"');
+        res.setHeader('WWW-Authenticate', 'Basic realm="Eventos Server"');
         res.end('Unauthorized');
     };
 
@@ -19,7 +19,7 @@ module.exports = function (passport) {
 
     });
 
-    router.post('/create', isAuthenticated, function (req, res, next) {
+    router.post('/create', function (req, res, next) {
         participante.createParticipante(req.body, function (err, docs) {
             res.send("ok");
         });
