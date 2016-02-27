@@ -151,14 +151,3 @@ thead {
   max-height: calc(100vh - 212px);
   overflow-y: auto;
 }
-
-.picture {
-  width:200px;
-  height:250px;
-}
-
-.picture img {
-  max-width: 100%;
-  height: auto;
-  width: auto; /* For IE8 */
-}

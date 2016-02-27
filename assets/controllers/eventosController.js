@@ -1,6 +1,6 @@
 var BinaryFileReader = {
     read: function(file, callback){
-        var reader = new FileReader;
+        var reader = new FileReader();
 
         var fileInfo = {
             name: file.name,
