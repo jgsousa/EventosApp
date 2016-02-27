@@ -4,7 +4,8 @@ var SpeakerSchema = new db.Schema({
     eventoId: String,
     nome: String,
     empresa: String,
-    descricao: String
+    descricao: String,
+    headline: String
 });
 
 SpeakerSchema.statics.getAllSpeakers = function (callback) {
