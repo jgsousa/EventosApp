@@ -1,3 +1,26 @@
+var BinaryFileReader = {
+    read: function(file, callback){
+        var reader = new FileReader;
+
+        var fileInfo = {
+            name: file.name,
+            type: file.type,
+            size: file.size,
+            file: null
+        };
+
+        reader.onload = function(){
+            fileInfo.file = new Uint8Array(reader.result);
+            callback(null, fileInfo);
+        };
+        reader.onerror = function(){
+            callback(reader.error);
+        };
+
+        reader.readAsArrayBuffer(file);
+    }
+};
+
 mainApp.controller("eventosController", ['$scope', '$filter', 'EventoServices', 'ngToast',
     function ($scope, $filter, EventoServices, ngToast) {
 
@@ -31,6 +54,15 @@ mainApp.controller("eventosDetailController", ['$scope', '$routeParams', '$locat
                 });
             }
         };
+        $scope.uploadFile = function(event){
+            var file = event.target.files[0];
+            BinaryFileReader.read(file, function(err, fileInfo){
+                var ficheiro = {};
+                ficheiro.eventoId = $routeParams.id;
+                ficheiro.file = fileInfo;
+                EventoServices.uploadFile($routeParams.id, ficheiro);
+            });
+        };
     }]);
 
 mainApp.controller("criarEventosController", ['$scope', '$location', 'EventoServices', 'ngToast',
@@ -49,3 +81,4 @@ mainApp.controller("criarEventosController", ['$scope', '$location', 'EventoServ
         };
 
     }]);
+

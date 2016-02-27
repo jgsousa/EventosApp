@@ -37,4 +37,11 @@ mainApp.service('EventoServices', ['$http', '$q', function ($http, $q) {
             });
     };
 
+    this.uploadFile = function(id,fileInfo){
+        return $http.post('/eventos/' + id + '/doc', fileInfo).
+        then(function(response){
+            return id;
+        });
+    };
+
 }]);

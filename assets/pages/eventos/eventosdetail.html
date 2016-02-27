@@ -35,6 +35,10 @@
                           placeholder="Insira detalhe sobre a tarefa" required></textarea>
             </div>
         </div>
+        <div class="fileUpload col-md-2 btn btn-deloitte hidden-xs">
+            <span>Upload documento</span>
+            <input id="uploadBtn" type="file" class="upload" input-on-change="uploadFile"/>
+        </div>
         <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>
     </form>
 

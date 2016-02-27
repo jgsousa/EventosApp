@@ -3,6 +3,7 @@ module.exports = function (passport) {
     var router = express.Router();
     var evento = require('../models/evento.server.model.js');
     var sessao = require('../models/sessao.server.model.js');
+    var documento = require('../models/documento.server.model.js');
 
     var isAuthenticated = function (req, res, next) {
         if (req.isAuthenticated()) {
@@ -26,9 +27,22 @@ module.exports = function (passport) {
         });
     });
 
+    router.post('/:id/doc', isAuthenticated, function (req, res, next) {
+        documento.createDocumento(req.body, function (err, docs) {
+            res.send("ok");
+        });
+    });
+
     router.get('/:id', function (req, res, next) {
         var id = req.params.id;
         evento.getEventoForId(id, function (err, docs) {
+            res.json(docs);
+        });
+    });
+
+    router.get('/:id/doc', function (req, res, next) {
+        var id = req.params.id;
+        documento.getDocumentoForEvento(id, function (err, docs) {
             res.json(docs);
         });
     });
