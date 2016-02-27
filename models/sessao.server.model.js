@@ -6,7 +6,8 @@ var SessaoSchema = new db.Schema({
     dataInicio: Date,
     dataFim: Date,
     speaker: Object,
-    descricao: String
+    descricao: String,
+    local:String
 });
 
 SessaoSchema.statics.getAllSessaos = function (callback) {
