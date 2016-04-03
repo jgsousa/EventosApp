@@ -69,7 +69,7 @@ mainApp.controller("sessoesDetailController", ['$scope', '$routeParams', '$locat
 mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServices', 'ngToast',
     'EventoServices', 'SpeakerServices',
     function ($scope, $location, SessaoServices, ngToast, EventoServices, SpeakerServices) {
-
+        $scope.data = {};
         EventoServices.getAllEventos().then(function (data) {
             $scope.eventos = data;
         });
@@ -77,6 +77,16 @@ mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServi
         SpeakerServices.getAllSpeakers().then(function (data) {
             $scope.oradores = data;
         });
+
+        $scope.dropSelected = function (evento) {
+            $scope.data.eventoId = evento._id;
+            $scope.data.evento = evento.nome;
+        };
+
+        $scope.dropSelectedSpeaker = function (orador) {
+            $scope.data.speaker = orador;
+            $scope.data.orador = orador.nome;
+        };
 
         $scope.gravar = function () {
             if ($scope.criarForm.$valid) {
