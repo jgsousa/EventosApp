@@ -68,7 +68,7 @@ mainApp.controller("sessoesDetailController", ['$scope', '$routeParams', '$locat
 
 mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServices', 'ngToast',
     'EventoServices', 'SpeakerServices',
-    function ($scope, $location, SessaoServices, ngToast, SpeakerServices, EventoServices) {
+    function ($scope, $location, SessaoServices, ngToast, EventoServices, SpeakerServices) {
 
         EventoServices.getAllEventos().then(function (data) {
             $scope.eventos = data;
