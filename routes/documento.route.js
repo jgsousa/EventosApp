@@ -56,8 +56,7 @@ module.exports = function (passport) {
             ACL: 'public-read'
         };
         s3.getSignedUrl('putObject', s3_params, function(err, data){
-            if (err) {
-            } else {
+            if (!err) {
                 var return_data = {
                     signed_request: data,
                     url: 'https://' + S3_BUCKET + '.s3.amazonaws.com/' + req.query.file_name
