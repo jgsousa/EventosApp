@@ -3,7 +3,8 @@ var db = require('mongoose');
 var DocumentoSchema = new db.Schema({
     eventoId: String,
     sessaoId: String,
-    file:Object
+    descricao: String,
+    fileUrl:Object
 });
 
 DocumentoSchema.statics.getAllDocumentos = function (callback) {

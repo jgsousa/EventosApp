@@ -18,6 +18,7 @@ var participantes = require('./routes/participante.route');
 var sessoes = require('./routes/sessao.route');
 var eventos = require('./routes/evento.route');
 var speakers = require('./routes/speaker.route');
+var documentos = require('./routes/documento.route');
 
 var app = express();
 
@@ -98,6 +99,7 @@ app.use('/sessoes', exposeDb, sessoes(passport));
 app.use('/participantes', exposeDb, participantes(passport));
 app.use('/speakers', exposeDb, speakers(passport));
 app.use('/eventos', exposeDb, eventos(passport));
+app.use('/documentos', exposeDb, documentos(passport));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
