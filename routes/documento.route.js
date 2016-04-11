@@ -46,7 +46,6 @@ module.exports = function (passport) {
     });
 
     router.get('/sign_s3', function(req, res){
-        console.log("Passou por aqui");
         aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
         var s3 = new aws.S3();
         var s3_params = {
@@ -58,9 +57,7 @@ module.exports = function (passport) {
         };
         s3.getSignedUrl('putObject', s3_params, function(err, data){
             if (err) {
-                console.log(err);
-            }
-            else {
+            } else {
                 var return_data = {
                     signed_request: data,
                     url: 'https://' + S3_BUCKET + '.s3.amazonaws.com/' + req.query.file_name
