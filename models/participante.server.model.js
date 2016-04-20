@@ -14,6 +14,7 @@ var ParticipanteSchema = new db.Schema({
     sessoes: Array
 });
 
+
 ParticipanteSchema.statics.getAllParticipantes = function (callback) {
     this.find({}, {}, callback);
 };

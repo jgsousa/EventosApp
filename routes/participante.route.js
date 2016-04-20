@@ -19,6 +19,20 @@ module.exports = function (passport) {
 
     });
 
+    router.get('/validate', function (req, res, next) {
+        participante.getAllParticipantes(function (err, docs) {
+            for (var i = 0; i < docs.length; i++){
+                var user = docs[i];
+                if(user.username == req.query.username && user.pin == req.query.pin){
+                    res.sendStatus(200);
+                    return;
+                }
+            }
+            res.status(401).send({error:'Username ou PIN incorreto '});
+        });
+
+    });
+
     router.post('/create', function (req, res, next) {
         participante.createParticipante(req.body, function (err, docs) {
             res.send("ok");
