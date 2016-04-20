@@ -23,7 +23,7 @@ module.exports = function (passport) {
         participante.getAllParticipantes(function (err, docs) {
             for (var i = 0; i < docs.length; i++){
                 var user = docs[i];
-                if(user.username == req.query.username && user.pin == req.query.pin){
+                if (user.username == req.query.username && user.pin == req.query.pin){
                     res.json(user);
                     return;
                 }
