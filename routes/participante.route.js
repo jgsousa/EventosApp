@@ -28,7 +28,7 @@ module.exports = function (passport) {
                     return;
                 }
             }
-            res.status(401).send({error:'Username ou PIN incorreto '});
+            res.status(403).send({error:'Username ou PIN incorreto '});
         });
 
     });
