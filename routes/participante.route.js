@@ -24,7 +24,7 @@ module.exports = function (passport) {
             for (var i = 0; i < docs.length; i++){
                 var user = docs[i];
                 if(user.username == req.query.username && user.pin == req.query.pin){
-                    res.sendStatus(200);
+                    res.json(user);
                     return;
                 }
             }
