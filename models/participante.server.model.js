@@ -8,6 +8,9 @@ var ParticipanteSchema = new db.Schema({
     perfilLinkedIn: String,
     memberId:{ type:String, unique:true},
     pictureUrl:String,
+    username: String,
+    pin: Number,
+    qrcode: String,
     sessoes: Array
 });
 

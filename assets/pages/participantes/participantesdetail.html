@@ -12,6 +12,30 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="inputUser" class="col-sm-2 control-label">Username</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control"
+                       id="inputUser" placeholder="Username" ng-model="data.username" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPIN" class="col-sm-2 control-label">PIN</label>
+
+            <div class="col-sm-10">
+                <input type="number" class="form-control"
+                       id="inputPIN" placeholder="PIN" ng-model="data.pin" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputQRCode" class="col-sm-2 control-label">QR Code</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control"
+                       id="inputQRCode" placeholder="QR Code" ng-model="data.qrcode" ng-required="false">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2 control-label">Headline</label>
 
             <div class="col-sm-10">
@@ -22,6 +46,7 @@
             <label class="col-sm-2 control-label">Perfil Linkedin</label>
             <a ng-href="{{data.perfilLinkedIn}}">{{data.perfilLinkedIn}}</a>
         </div>
+
         <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>
     </form>
     <div class=".col-md-3 table-responsive picture">
