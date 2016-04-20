@@ -1,8 +1,13 @@
 <toast></toast>
 <div class="container">
+
     <h3>Detalhe Sessão</h3>
 
-    <form class="form-horizontal" name="criarForm">
+    <form class="form-horizontal col-md-6 detalhe" name="criarForm">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dados Gerais</h3>
+            </div>
         <div class="form-group">
             <label for="inputNome" class="col-sm-2 control-label">Nome</label>
 
@@ -26,25 +31,11 @@
                 </ul>
             </div>
         </div>
-        <div class="dropdown form-group">
-            <label for="dropdownOrador" class="col-sm-2 control-label">Orador</label>
 
-            <div class="btn-group col-sm-10" dropdown is-open="status.isopen2">
-                <button id="dropdownOrador" type="button" class="btn btn-default dropdown-toggle" dropdown-toggle
-                        ng-disabled="disabled">
-                    {{data.orador}} <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li ng-repeat="um in oradores">
-                        <a ng-click="dropSelectedSpeaker(um)">{{um.nome}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <div class="form-group">
             <label for="inputData" class="col-sm-2 control-label">Data início</label>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <input type="date" class="form-control"
                        id="inputData" placeholder="Data" ng-model="data.dataInicio" ng-required="true">
             </div>
@@ -52,7 +43,7 @@
         <div class="form-group">
             <label for="inputHoraInicio" class="col-sm-2 control-label">Hora Início</label>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <input type="time" class="form-control"
                        id="inputHoraInicio" placeholder="Data" ng-model="data.dataInicio" ng-required="true">
             </div>
@@ -60,7 +51,7 @@
         <div class="form-group">
             <label for="inputHoraFim" class="col-sm-2 control-label">Hora Fim</label>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <input type="time" class="form-control"
                        id="inputHoraFim" placeholder="Data" ng-model="data.dataFim" ng-required="true">
             </div>
@@ -81,7 +72,48 @@
                           placeholder="Insira detalhe sobre a sessão" required></textarea>
             </div>
         </div>
+            </div>
         <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>
     </form>
 
+    <div class=".col-md-6 table-responsive speaker-table">
+        <table class="table">
+            <thead>
+            <tr class="row">
+                <th>Orador</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="row" ng-repeat="speaker in data.speakers">
+                <td>{{speaker.nome}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="col-md-6">
+                <div class="dropdown form-group">
+                    <label for="dropdownOrador" class="col-sm-3 control-label">Orador</label>
+
+                    <div class="btn-group col-sm-3" dropdown is-open="status.isopen2">
+                        <button id="dropdownOrador" type="button" class="btn btn-default dropdown-toggle" dropdown-toggle
+                                ng-disabled="disabled">
+                            {{data.orador}} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="um in oradores">
+                                <a ng-click="dropSelectedSpeaker(um)">{{um.nome}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-deloitte centered" ng-click="adicionar()">
+                    <span class="glyphicon glyphicon-plus"></span> Adicionar orador
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

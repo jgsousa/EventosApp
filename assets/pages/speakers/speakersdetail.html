@@ -12,11 +12,19 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="inputHeadline" class="col-sm-2 control-label">Nome</label>
+            <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
 
             <div class="col-sm-10">
                 <input type="text" class="form-control"
-                       id="inputHeadline" placeholder="Nome" ng-model="data.headline" ng-required="true">
+                       id="inputHeadline" placeholder="Headline" ng-model="data.headline" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCompany" class="col-sm-2 control-label">Empresa</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control"
+                       id="inputCompany" placeholder="Headline" ng-model="data.empresa" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -24,7 +32,23 @@
 
             <div class="col-sm-10">
                 <input type="text" class="form-control"
-                       id="inputLinkedIn" placeholder="Nome" ng-model="data.linkedInProfile" ng-required="true">
+                       id="inputLinkedIn" placeholder="Perfil" ng-model="data.linkedInProfile">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPictureUrl" class="col-sm-2 control-label">Foto</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control"
+                       id="inputPictureUrl" placeholder="Foto" ng-model="data.pictureUrl" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTexto" class="col-sm-2 control-label">Detalhe</label>
+
+            <div class="col-sm-10">
+                <textarea id="inputTexto" class="form-control" rows="5" ng-model="data.detalhe"
+                          placeholder="Insira detalhe sobre orador" required></textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>

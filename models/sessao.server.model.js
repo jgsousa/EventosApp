@@ -5,9 +5,9 @@ var SessaoSchema = new db.Schema({
     nome: String,
     dataInicio: Date,
     dataFim: Date,
-    speaker: Object,
     descricao: String,
-    local:String
+    local:String,
+    speakers: Array
 });
 
 SessaoSchema.statics.getAllSessaos = function (callback) {

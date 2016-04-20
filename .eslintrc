@@ -21,7 +21,6 @@
   "rules": {
     "block-scoped-var": 1,
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-    "global-strict": 2,
     "no-div-regex": 2,
     "no-floating-decimal": 2,
     "no-self-compare": 2,

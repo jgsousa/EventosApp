@@ -6,7 +6,9 @@ var SpeakerSchema = new db.Schema({
     empresa: String,
     descricao: String,
     headline: String,
-    linkedInProfile: String
+    linkedInProfile: String,
+    pictureUrl: String,
+    detalhe:String
 });
 
 SpeakerSchema.statics.getAllSpeakers = function (callback) {

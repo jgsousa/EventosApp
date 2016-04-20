@@ -13,7 +13,7 @@ mainApp.controller("sessoesDetailController", ['$scope', '$routeParams', '$locat
     function ($scope, $routeParams, $location, SessaoServices, ngToast, EventoServices, SpeakerServices) {
         EventoServices.getAllEventos().then(function (data) {
             $scope.eventos = data;
-            if ($scope.data.eventoId){
+            if ($scope.data && $scope.data.eventoId){
                 for (var i = 0; i < data.length; i++ ){
                     if (data[i]._id == $scope.data.eventoId){
                         $scope.data.evento = data[i].nome;
@@ -31,7 +31,9 @@ mainApp.controller("sessoesDetailController", ['$scope', '$routeParams', '$locat
                 $scope.data = data;
                 $scope.data.dataInicio = new Date($scope.data.dataInicio);
                 $scope.data.dataFim = new Date($scope.data.dataFim);
-                $scope.data.orador = data.speaker.nome;
+                if (data.speaker){
+                    $scope.data.orador = data.speaker.nome;
+                }
                 if ($scope.eventos){
                     for (var i = 0; i < $scope.eventos.length; i++ ){
                         if ($scope.eventos[i]._id == $scope.data.eventoId){
@@ -64,12 +66,21 @@ mainApp.controller("sessoesDetailController", ['$scope', '$routeParams', '$locat
             $scope.data.speaker = orador;
             $scope.data.orador = orador.nome;
         };
+
+        $scope.adicionar = function(){
+            if ($scope.data.speaker){
+                if (!$scope.data.speakers){
+                    $scope.data.speakers = [];
+                }
+                $scope.data.speakers.push($scope.data.speaker);
+            }
+        };
     }]);
 
 mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServices', 'ngToast',
     'EventoServices', 'SpeakerServices',
-    function ($scope, $location, SessaoServices, ngToast, SpeakerServices, EventoServices) {
-
+    function ($scope, $location, SessaoServices, ngToast, EventoServices, SpeakerServices) {
+        $scope.data = {};
         EventoServices.getAllEventos().then(function (data) {
             $scope.eventos = data;
         });
@@ -77,6 +88,16 @@ mainApp.controller("criarSessoesController", ['$scope', '$location','SessaoServi
         SpeakerServices.getAllSpeakers().then(function (data) {
             $scope.oradores = data;
         });
+
+        $scope.dropSelected = function (evento) {
+            $scope.data.eventoId = evento._id;
+            $scope.data.evento = evento.nome;
+        };
+
+        $scope.dropSelectedSpeaker = function (orador) {
+            $scope.data.speaker = orador;
+            $scope.data.orador = orador.nome;
+        };
 
         $scope.gravar = function () {
             if ($scope.criarForm.$valid) {
